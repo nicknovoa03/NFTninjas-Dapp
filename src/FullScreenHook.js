@@ -13,7 +13,7 @@ import Web3 from "web3";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
-import MintBackground from './Samples/MintBackground.GIF'
+import MintBackground from './samples/MintBackground.GIF'
 import { contractAddr, contract } from './Contract';
 
 function FullScreenHook() {
@@ -93,8 +93,8 @@ function FullScreenHook() {
         return (
             <Typography variant="body2" color="text.secondary" align="center" {...props}>
                 {'Copyright © '}
-                <Link color="inherit" href="https://www.blackboxcollective.io/">
-                    Black Box Collective
+                <Link color="inherit" href="https://www.TheNFTninjas.com/">
+                    NFT Ninjas
                 </Link>{' '}
                 {new Date().getFullYear()}
                 {'.'}
@@ -174,7 +174,7 @@ function FullScreenHook() {
                             display='flex'
                             justifyContent='center'
                         >
-                            BLACK BOX COLLECTIVE
+                            NFT NINJAS
                         </Typography>
                         <Slider
                             onChangeCommitted={(events, value) => handleSlider(events, value)}
