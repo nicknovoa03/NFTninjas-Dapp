@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import HookApp from './FullScreenHook'
+import HookApp from './SideScreen'
+
 
 ReactDOM.render(
   <React.StrictMode>

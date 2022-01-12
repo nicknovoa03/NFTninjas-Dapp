@@ -5,7 +5,6 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Slider from '@mui/material/Slider';
 import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
@@ -15,6 +14,7 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 
 import MintBackground from './samples/MintBackground.gif'
 import { contractAddr, contract } from './Contract';
+import WhitelistDictionary from './WhitelistDictionary';
 
 function SideScreen() {
 
@@ -22,8 +22,9 @@ function SideScreen() {
     const [wallet, setWallet] = useState();
     const [web3, setWeb3] = useState();
 
-    //const whitelist = WhitelistDictionary();
+
     const etherscanLink = "https://etherscan.io/address/";
+    const whitelist = WhitelistDictionary();
 
     const providerOptions = {
         injected: {
@@ -51,7 +52,7 @@ function SideScreen() {
             let web3 = new Web3(provider);
             setWeb3(web3);
             web3.eth.getAccounts().then(async (addr) => {
-                setWallet(addr[0]);
+                setWallet(addr[0].toLocaleLowerCase());
             });
         } catch (e) {
             console.log(e);
@@ -60,7 +61,7 @@ function SideScreen() {
     }
 
     async function mint() {
-        const price = 1.95 * mintAmount;
+        const price = .12 * mintAmount;
         const mintable_price = price.toString();
 
         const tx = {
@@ -68,14 +69,18 @@ function SideScreen() {
             to: contractAddr,
             value: ethers.utils.parseEther(mintable_price)["_hex"],
             gas: 210000,
-            data: contract.methods.mintAccessPass(mintAmount).encodeABI(),
+            data: contract.methods.mintNinja(mintAmount).encodeABI(),
         };
 
         const createTransaction = await web3.eth.sendTransaction(tx);
     }
 
     async function presaleMint() {
-        const price = 1.95 * mintAmount;
+        if (!whitelist[wallet]) {
+            return
+        }
+
+        const price = .1 * mintAmount;
         const mintable_price = price.toString();
 
         const tx = {
@@ -83,10 +88,11 @@ function SideScreen() {
             to: contractAddr,
             value: ethers.utils.parseEther(mintable_price)["_hex"],
             gas: 210000,
-            data: contract.methods.mintAccessPass(mintAmount).encodeABI(),
+            data: contract.methods.mintNinjaWhitelist(mintAmount).encodeABI(),
         };
 
         const createTransaction = await web3.eth.sendTransaction(tx);
+
     }
 
     function handleSlider(event, value) {
@@ -105,9 +111,6 @@ function SideScreen() {
             ].join(','),
         }
     });
-
-    const theme = createTheme();
-
 
     function Copyright(props) {
         return (
@@ -238,7 +241,7 @@ function SideScreen() {
                             <Web3Button
                                 fullWidth
                                 variant="contained"
-                                onClick={mint}
+                                onClick={presaleMint}
                             >
                                 Mint
                             </Web3Button>
@@ -264,7 +267,7 @@ function SideScreen() {
                         >
                             Connected Wallet:
                         </Typography>
-                        <WalletAddress/>
+                        <WalletAddress />
                         <Typography
                             component="h4"
                             variant="Subtitle"
@@ -276,7 +279,7 @@ function SideScreen() {
                                 mt: 1
                             }}
                         >
-                            Contract Address: 
+                            Contract Address:
                         </Typography>
                         <ContractAddress />
                         <Copyright sx={{ mt: 1 }} />
