@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.js": "/NFTninjas-Dapp/static/js/main.1fd97939.chunk.js",
-    "main.js.map": "/NFTninjas-Dapp/static/js/main.1fd97939.chunk.js.map",
+    "main.js": "/NFTninjas-Dapp/static/js/main.d7c9e411.chunk.js",
+    "main.js.map": "/NFTninjas-Dapp/static/js/main.d7c9e411.chunk.js.map",
     "runtime-main.js": "/NFTninjas-Dapp/static/js/runtime-main.71f49337.js",
     "runtime-main.js.map": "/NFTninjas-Dapp/static/js/runtime-main.71f49337.js.map",
-    "static/js/2.02dbb3bc.chunk.js": "/NFTninjas-Dapp/static/js/2.02dbb3bc.chunk.js",
-    "static/js/2.02dbb3bc.chunk.js.map": "/NFTninjas-Dapp/static/js/2.02dbb3bc.chunk.js.map",
+    "static/js/2.5d53bc73.chunk.js": "/NFTninjas-Dapp/static/js/2.5d53bc73.chunk.js",
+    "static/js/2.5d53bc73.chunk.js.map": "/NFTninjas-Dapp/static/js/2.5d53bc73.chunk.js.map",
     "index.html": "/NFTninjas-Dapp/index.html",
-    "static/js/2.02dbb3bc.chunk.js.LICENSE.txt": "/NFTninjas-Dapp/static/js/2.02dbb3bc.chunk.js.LICENSE.txt",
-    "static/media/MintBackground.00f211c7.GIF": "/NFTninjas-Dapp/static/media/MintBackground.00f211c7.GIF"
+    "static/js/2.5d53bc73.chunk.js.LICENSE.txt": "/NFTninjas-Dapp/static/js/2.5d53bc73.chunk.js.LICENSE.txt",
+    "static/media/MintBackground.3c5c1248.GIF": "/NFTninjas-Dapp/static/media/MintBackground.3c5c1248.GIF",
+    "static/media/MintBackground.3c5c1248.gif": "/NFTninjas-Dapp/static/media/MintBackground.3c5c1248.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.71f49337.js",
-    "static/js/2.02dbb3bc.chunk.js",
-    "static/js/main.1fd97939.chunk.js"
+    "static/js/2.5d53bc73.chunk.js",
+    "static/js/main.d7c9e411.chunk.js"
   ]
 }
