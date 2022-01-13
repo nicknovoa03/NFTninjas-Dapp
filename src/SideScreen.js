@@ -169,7 +169,7 @@ function SideScreen() {
         padding: '6px 12px',
         border: '1px solid',
         lineHeight: 1.5,
-        backgroundColor: 'grey',
+        backgroundColor: '#ac2424',
         fontFamily: [
             'Roboto',
         ].join(','),
@@ -180,7 +180,7 @@ function SideScreen() {
         },
         '&:active': {
             boxShadow: '#fff',
-            backgroundColor: '#fff',
+            backgroundColor: '#ac2424',
             borderColor: '#fff',
         }
     });
