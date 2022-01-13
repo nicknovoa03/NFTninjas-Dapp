@@ -12,9 +12,11 @@ import Web3 from "web3";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
-import MintBackground from './samples/MintBackground.gif'
+import MintBackground from './samples/Mint-BG.png'
+import logo from './samples/logo.png'
 import { contractAddr, contract } from './Contract';
 import WhitelistDictionary from './WhitelistDictionary';
+
 
 function SideScreen() {
 
@@ -188,42 +190,34 @@ function SideScreen() {
         <ThemeProvider theme={darkTheme} >
             <Grid container component="main" sx={{ height: '100vh' }}>
                 <CssBaseline />
-                <Grid
-                    item
-                    xs={false}
-                    sm={4}
-                    md={7}
-                    sx={{
-                        backgroundImage: `url(${MintBackground})`,
-                        backgroundRepeat: 'no-repeat',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
-                />
-                <Grid item xs={12} sm={8} md={5} >
+                <Grid item xs={12} sm={12} md={12} lg={12} sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    backgroundImage: `url(${MintBackground})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}>
                     <Box
                         sx={{
-                            marginTop: 35,
+                            mt: 1,
+                            marginTop: 20,
                             mx: 5,
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
-                            backgroundColor: '#121212',
-                            borderRadius: 10,
-                            opacity: [1, 1, .92],
                         }}
                     >
-                        <Typography
-                            component="h1"
-                            variant="Title"
-                            fontWeight="fontWeightBold"
-                            color="White"
-                            align="center"
-                            display='flex'
-                            justifyContent='center'
-                        >
-                            NFT NINJAS
-                        </Typography>
+                        <Box
+                            component="img"
+                            sx={{
+                                height: 222,
+                                width: 222,
+                            }}
+                            alt="The house from the offer."
+                            src={logo}
+                        />
                         <Slider
                             onChangeCommitted={(events, value) => handleSlider(events, value)}
                             aria-label="Mint Amount"
