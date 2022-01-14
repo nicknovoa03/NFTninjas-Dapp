@@ -167,9 +167,9 @@ function SideScreen() {
     const Web3Button = styled(Button)({
         fontSize: 16,
         padding: '6px 12px',
-        border: '1px solid',
         lineHeight: 1.5,
         backgroundColor: '#ac2424',
+        color:'white',
         fontFamily: [
             'Roboto',
         ].join(','),
@@ -177,6 +177,7 @@ function SideScreen() {
             backgroundColor: '#fff',
             borderColor: 'rgba(255, 255, 255, 0.08)',
             boxShadow: 'rgba(255, 255, 255, 0.16)',
+            color: '#ac2424',
         },
         '&:active': {
             boxShadow: '#fff',

@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import HookApp from './SideScreen'
+import HookApp from './MintScreen'
 
 
 ReactDOM.render(
