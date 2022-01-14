@@ -203,7 +203,7 @@ function SideScreen() {
                     <Box
                         sx={{
                             mt: 1,
-                            marginTop: 20,
+                            marginTop: 22,
                             mx: 5,
                             display: 'flex',
                             flexDirection: 'column',
